@@ -3,7 +3,7 @@ import {describe} from 'node:test'
 import {FoodSet} from './internal/domain/food'
 import {User} from './internal/domain/user'
 import {users} from './mocks/datasource'
-import {BuyMore} from './repository/discount'
+import {BuyMoreToDiscount} from './repository/discount'
 import {CalculatorFactory} from './utils/factory'
 
 describe('Test discounts functions: MemberShip', () => {
@@ -26,6 +26,7 @@ describe('Test discounts functions: MemberShip', () => {
 
 
         const nonMember = users[0]
+
         nonMember.cart = [
             {foodSet: FoodSet.RED, amount: 5}
         ]
@@ -48,7 +49,7 @@ describe('Test discounts functions: Buy more to discount', () => {
             hasMemberCard: false,
             cart:[{foodSet: FoodSet.ORANGE, amount: 3}]
         } as User
-        const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
+        const buyMoreDiscountOption = new BuyMoreToDiscount(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
         const calculatorFactory = new CalculatorFactory([buyMoreDiscountOption])
         const calculator = calculatorFactory.createWithMemberShip(user)
 
@@ -67,7 +68,7 @@ describe('Test discounts functions: Buy more to discount', () => {
             hasMemberCard: false,
             cart:[{foodSet: FoodSet.ORANGE, amount: 2}]
         } as User
-        const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
+        const buyMoreDiscountOption = new BuyMoreToDiscount(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
         const calculatorFactory = new CalculatorFactory([buyMoreDiscountOption])
         const calculator = calculatorFactory.createWithMemberShip(user)
 
@@ -86,7 +87,7 @@ describe('Test discounts functions: Buy more to discount', () => {
             hasMemberCard: false,
             cart:[{foodSet: FoodSet.YELLOW, amount: 3}]
         } as User
-        const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
+        const buyMoreDiscountOption = new BuyMoreToDiscount(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
         const calculatorFactory = new CalculatorFactory([buyMoreDiscountOption])
         const calculator = calculatorFactory.createWithMemberShip(user)
 
@@ -102,7 +103,7 @@ describe('Test discounts functions: Buy more to discount', () => {
 describe('Test multiple discount', () => {
     // Given
     const user = users[4]
-    const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
+    const buyMoreDiscountOption = new BuyMoreToDiscount(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
     const calculatorFactory = new CalculatorFactory([buyMoreDiscountOption])
     const calculator = calculatorFactory.createWithMemberShip(user)
 

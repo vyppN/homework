@@ -4,14 +4,14 @@ import {FoodSet} from '../internal/domain/food'
 import {User} from '../internal/domain/user'
 import {MockCalculator} from '../mocks/calculator'
 import {users} from '../mocks/datasource'
-import {BuyMore, Membership} from './discount'
+import {BuyMoreToDiscount, MembershipDiscount} from './discount'
 
 
 describe('Test discounts functions: MemberShip', () => {
     it('Member must have 10% discount', () => {
 
         // Given
-        const memberShip = new Membership(10)
+        const memberShip = new MembershipDiscount(10)
         const calculator = new MockCalculator(memberShip)
         const member = users[1]
 
@@ -24,7 +24,7 @@ describe('Test discounts functions: MemberShip', () => {
 
     it('Buy more than 2 of Orange, Pink, Green must got 5% discount', () => {
         //Given
-        const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
+        const buyMoreDiscountOption = new BuyMoreToDiscount(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
         const calculator = new MockCalculator(buyMoreDiscountOption)
         const user = {
             name: 'User',
@@ -43,7 +43,7 @@ describe('Test discounts functions: MemberShip', () => {
 
     it('Buy 2 or less of Orange, Pink, Green must got no discount', () => {
         //Given
-        const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
+        const buyMoreDiscountOption = new BuyMoreToDiscount(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
         const calculator = new MockCalculator(buyMoreDiscountOption)
         const user = {
             name: 'User',
@@ -62,7 +62,7 @@ describe('Test discounts functions: MemberShip', () => {
 
     it('Buy none of Orange, Pink, Green must got no discount', () => {
         //Given
-        const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
+        const buyMoreDiscountOption = new BuyMoreToDiscount(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)
         const calculator = new MockCalculator(buyMoreDiscountOption)
         const user = {
             name: 'User',

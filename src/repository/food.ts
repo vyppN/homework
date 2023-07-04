@@ -4,7 +4,7 @@ import {FoodRepository} from '../internal/port/repository'
 import {FoodPrices} from '../mocks/datasource'
 
 
-export class FoodFetcher implements FoodRepository {
+export class FoodFormMockDataSource implements FoodRepository {
     private readonly discountOptions?: Discountable[]
 
     constructor(discountOptions?: Discountable[]) {

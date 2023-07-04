@@ -1,7 +1,7 @@
 import {User} from '../internal/domain/user'
 import {Discountable} from '../internal/port/pricing'
-import {Membership} from '../repository/discount'
-import {FoodFetcher} from '../repository/food'
+import {MembershipDiscount} from '../repository/discount'
+import {FoodFormMockDataSource} from '../repository/food'
 import {FoodCalculator} from '../service/calculator'
 
 export class CalculatorFactory {
@@ -12,8 +12,9 @@ export class CalculatorFactory {
     }
 
     createWithMemberShip(user: User): FoodCalculator {
-        if(user.hasMemberCard) this.defaultDiscountOptions.push(new Membership(10))
-        const repo = new FoodFetcher(this.defaultDiscountOptions)
+        if(user.hasMemberCard) this.defaultDiscountOptions.push(new MembershipDiscount(10))
+        const repo = new FoodFormMockDataSource(this.defaultDiscountOptions)
+
         return new FoodCalculator(repo)
     }
 }

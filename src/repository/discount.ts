@@ -1,17 +1,19 @@
 import {FoodSet} from '../internal/domain/food'
 import {Discountable} from '../internal/port/pricing'
 
-export class Membership implements Discountable {
+export class MembershipDiscount implements Discountable {
     private readonly discountPercent: number
+
     constructor(discountPercent: number) {
         this.discountPercent = discountPercent
     }
+
     calculate(foodSet: FoodSet, price: number, amount: number): number {
         return price - (price * (this.discountPercent / 100))
     }
 }
 
-export class BuyMore implements Discountable {
+export class BuyMoreToDiscount implements Discountable {
     private readonly buyAtLeast: number
     private readonly foodSets: FoodSet[]
     private readonly discountPercent: number
