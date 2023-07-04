@@ -16,7 +16,7 @@
     "dev": "yarn ts-node ./src/index.ts",
     "start": "yarn tsc && node ./bin/index.js",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage && open coverage/lcov-report/index.html"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
