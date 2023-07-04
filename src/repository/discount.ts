@@ -1,6 +1,14 @@
 import {FoodSet} from '../internal/domain/food'
 import {Discountable} from '../internal/port/pricing'
 
+/*
+TLDR; We can have N conditions for discounting without if statement on the implementation logic
+
+With the interface, we can implement polymorphism to create various types of discount condition.
+We can eliminate if statement that decrease cyclomatic complexity in significant way
+and make it follow the L in SOLID - Liskov substitution
+ */
+
 export class MembershipDiscount implements Discountable {
     private readonly discountPercent: number
 

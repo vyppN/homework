@@ -3,6 +3,10 @@ import {Food} from "../internal/domain/food";
 import {FoodPrices} from "./datasource";
 import {FoodCalculatorService} from "../internal/port/service";
 
+/*
+This mock is too complicated, but it's OK for now
+ */
+
 export class MockCalculator implements FoodCalculatorService {
     private discount: Discountable
     constructor(discount: Discountable) {

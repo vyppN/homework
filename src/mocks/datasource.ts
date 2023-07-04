@@ -1,6 +1,10 @@
 import {FoodSet} from "../internal/domain/food";
 import {User} from "../internal/domain/user";
 
+/*
+Mock data sources, just to make the code runs
+ */
+
 export const users = [
     {
         name: "User-1",
@@ -41,6 +45,9 @@ export const users = [
     }
 ] as  User[]
 
+/*
+Assumes this is the database 😆
+*/
 export const FoodPrices = {
     'Red set': 50,
     'Green set': 40,

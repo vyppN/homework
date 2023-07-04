@@ -5,6 +5,11 @@ import {users} from './mocks/datasource'
 import {BuyMoreToDiscount} from './repository/discount'
 import {CalculatorFactory} from './utils/factory'
 
+/*
+We have a set of users with various settings,
+let's try it
+ */
+
 users.forEach((user: User) => {
     const defaultDiscount = [
         new BuyMoreToDiscount(2,[FoodSet.ORANGE, FoodSet.PINK, FoodSet.GREEN],5)

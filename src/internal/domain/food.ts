@@ -1,3 +1,7 @@
+/*
+Nothing, just data objects
+*/
+
 export enum FoodSet {
     RED= 'Red set',
     GREEN = 'Green set',

@@ -1,6 +1,9 @@
 import {Discountable} from "../internal/port/pricing";
 import {FoodSet} from "../internal/domain/food";
 
+/*
+Mock it for easy testing
+ */
 export class MockDiscount implements Discountable {
     private readonly discount: number
 

@@ -23,3 +23,28 @@ export class FoodFormMockDataSource implements FoodRepository {
         return price * food.amount
     }
 }
+
+/*
+
+We can change the datasource any time without modifying the other files.
+Just create more data accessor then replace the existing one on implementation
+
+class FoodFromRESTAPI implements FoodRepository {
+    getPrice(food: Food): number {
+        statement.....
+    }
+}
+
+class FoodFromGraphQL implements FoodRepository {
+    getPrice(food: Food): number {
+        statement.....
+    }
+}
+
+class FoodFromXXXXXXX implements FoodRepository {
+    getPrice(food: Food): number {
+        statement.....
+    }
+}
+
+* */

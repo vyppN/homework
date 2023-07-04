@@ -2,6 +2,10 @@ import {FoodRepository} from "../internal/port/repository";
 import {Food} from "../internal/domain/food";
 import {Discountable} from "../internal/port/pricing";
 
+/*
+Mock it for easy testing
+ */
+
 export class MockFoodRepository implements FoodRepository {
     private readonly price: number
     private readonly discount?: Discountable
