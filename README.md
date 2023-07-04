@@ -6,7 +6,7 @@
 
 **Initialization**
 ```shell
-yarn
+yarn                        This will install dependencies and initial prehook
 ```
 
 **Scripts**
