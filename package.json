@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "yarn ts-node ./src/index.ts",
     "start": "yarn tsc && node ./bin/index.js",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
