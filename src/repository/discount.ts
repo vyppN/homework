@@ -1,5 +1,5 @@
-import {Discountable} from "../internal/port/pricing";
-import {FoodSet} from "../internal/domain/food";
+import {FoodSet} from '../internal/domain/food'
+import {Discountable} from '../internal/port/pricing'
 
 export class Membership implements Discountable {
     private readonly discountPercent: number
@@ -7,7 +7,7 @@ export class Membership implements Discountable {
         this.discountPercent = discountPercent
     }
     calculate(foodSet: FoodSet, price: number, amount: number): number {
-        return price - (price * (this.discountPercent / 100));
+        return price - (price * (this.discountPercent / 100))
     }
 }
 
@@ -23,7 +23,7 @@ export class BuyMore implements Discountable {
     }
 
     calculate(foodSet: FoodSet, price: number, amount: number): number {
-        if(amount < this.buyAtLeast + 1) return price;
+        if(amount < this.buyAtLeast + 1) return price
         if(this.foodSets.indexOf(foodSet) < 0) return price
         return price - (price * (this.discountPercent / 100))
     }

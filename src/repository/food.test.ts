@@ -1,10 +1,11 @@
-import {describe} from "node:test";
-import {FoodFetcher} from "./food";
-import {FoodSet} from "../internal/domain/food";
-import {MockDiscount} from "../mocks/discount";
+import {describe} from 'node:test'
 
-describe("Test food functions", () => {
-    it("Test fetcher without discount", () => {
+import {FoodSet} from '../internal/domain/food'
+import {MockDiscount} from '../mocks/discount'
+import {FoodFetcher} from './food'
+
+describe('Test food functions', () => {
+    it('Test fetcher without discount', () => {
 
         // Given
         const repo = new FoodFetcher()
@@ -16,7 +17,7 @@ describe("Test food functions", () => {
         expect(price).toBe(50)
     })
 
-    it("Test fetcher with discount", () => {
+    it('Test fetcher with discount', () => {
 
         // Given
         const discount = new MockDiscount(10)

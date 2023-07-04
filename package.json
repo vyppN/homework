@@ -4,7 +4,9 @@
   "description": "Code Homework",
   "main": "bin/index.js",
   "types": "bin/index.d.js",
-  "files": ["/bin"],
+  "files": [
+    "/bin"
+  ],
   "author": "Nattapol Chitinsiyanon",
   "license": "MIT",
   "private": false,
@@ -16,10 +18,15 @@
     "dev": "yarn ts-node ./src/index.ts",
     "start": "yarn tsc && node ./bin/index.js",
     "test": "jest",
-    "coverage": "jest --coverage && open coverage/lcov-report/index.html"
+    "coverage": "jest --coverage && open coverage/lcov-report/index.html",
+    "lint": "eslint . --ext .ts"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "jest": "^29.5.0",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1"

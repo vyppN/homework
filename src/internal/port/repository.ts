@@ -1,4 +1,4 @@
-import {Food} from "../domain/food";
+import {Food} from '../domain/food'
 
 
 export interface FoodRepository {

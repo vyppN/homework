@@ -1,7 +1,7 @@
-import {FoodRepository} from "../internal/port/repository";
-import {Discountable} from "../internal/port/pricing";
-import {Food} from "../internal/domain/food";
-import {FoodPrices} from "../mocks/datasource";
+import {Food} from '../internal/domain/food'
+import {Discountable} from '../internal/port/pricing'
+import {FoodRepository} from '../internal/port/repository'
+import {FoodPrices} from '../mocks/datasource'
 
 
 export class FoodFetcher implements FoodRepository {

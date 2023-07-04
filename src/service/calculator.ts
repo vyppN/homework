@@ -1,6 +1,6 @@
-import {FoodCalculatorService} from "../internal/port/service";
-import {FoodRepository} from "../internal/port/repository";
-import {Food} from "../internal/domain/food";
+import {Food} from '../internal/domain/food'
+import {FoodRepository} from '../internal/port/repository'
+import {FoodCalculatorService} from '../internal/port/service'
 
 export class FoodCalculator implements FoodCalculatorService {
     private foodRepository: FoodRepository

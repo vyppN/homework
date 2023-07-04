@@ -1,8 +1,8 @@
-import {User} from "../internal/domain/user";
-import {FoodFetcher} from "../repository/food";
-import {Discountable} from "../internal/port/pricing";
-import {Membership} from "../repository/discount";
-import {FoodCalculator} from "../service/calculator";
+import {User} from '../internal/domain/user'
+import {Discountable} from '../internal/port/pricing'
+import {Membership} from '../repository/discount'
+import {FoodFetcher} from '../repository/food'
+import {FoodCalculator} from '../service/calculator'
 
 export class CalculatorFactory {
     private readonly defaultDiscountOptions?: Discountable[]

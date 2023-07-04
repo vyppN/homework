@@ -1,11 +1,13 @@
-import {describe} from "node:test";
-import {users} from "./mocks/datasource";
-import {FoodSet} from "./internal/domain/food";
-import {CalculatorFactory} from "./utils/factory";
-import {BuyMore} from "./repository/discount";
-import {User} from "./internal/domain/user";
-describe("Test discounts functions: MemberShip", () => {
-    it("Member must have 10% discount", () => {
+import {describe} from 'node:test'
+
+import {FoodSet} from './internal/domain/food'
+import {User} from './internal/domain/user'
+import {users} from './mocks/datasource'
+import {BuyMore} from './repository/discount'
+import {CalculatorFactory} from './utils/factory'
+
+describe('Test discounts functions: MemberShip', () => {
+    it('Member must have 10% discount', () => {
         //Given
         const member = users[1]
 
@@ -20,7 +22,7 @@ describe("Test discounts functions: MemberShip", () => {
         expect(memberPrice).toBe(81)
     })
 
-    it("Non Member must have no discount", () => {
+    it('Non Member must have no discount', () => {
 
 
         const nonMember = users[0]
@@ -38,11 +40,11 @@ describe("Test discounts functions: MemberShip", () => {
     })
 })
 
-describe("Test discounts functions: Buy more to discount", () => {
-    it("Buy more than 2 of Orange, Pink, Green must got 5% discount", () => {
+describe('Test discounts functions: Buy more to discount', () => {
+    it('Buy more than 2 of Orange, Pink, Green must got 5% discount', () => {
         //Given
         const user = {
-            name: "User",
+            name: 'User',
             hasMemberCard: false,
             cart:[{foodSet: FoodSet.ORANGE, amount: 3}]
         } as User
@@ -58,10 +60,10 @@ describe("Test discounts functions: Buy more to discount", () => {
 
     })
 
-    it("Buy less than 2 of Orange, Pink, Green -> no discount", () => {
+    it('Buy less than 2 of Orange, Pink, Green -> no discount', () => {
         //Given
         const user = {
-            name: "User",
+            name: 'User',
             hasMemberCard: false,
             cart:[{foodSet: FoodSet.ORANGE, amount: 2}]
         } as User
@@ -77,10 +79,10 @@ describe("Test discounts functions: Buy more to discount", () => {
 
     })
 
-    it("Buy other than Orange, Pink, Green -> no discount", () => {
+    it('Buy other than Orange, Pink, Green -> no discount', () => {
         //Given
         const user = {
-            name: "User",
+            name: 'User',
             hasMemberCard: false,
             cart:[{foodSet: FoodSet.YELLOW, amount: 3}]
         } as User
@@ -97,7 +99,7 @@ describe("Test discounts functions: Buy more to discount", () => {
     })
 })
 
-describe("Test multiple discount", () => {
+describe('Test multiple discount', () => {
     // Given
     const user = users[4]
     const buyMoreDiscountOption = new BuyMore(2, [FoodSet.ORANGE, FoodSet.GREEN, FoodSet.PINK], 5)

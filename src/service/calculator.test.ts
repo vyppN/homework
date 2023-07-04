@@ -1,11 +1,12 @@
-import {describe} from "node:test";
-import {users} from "../mocks/datasource";
-import {FoodCalculator} from "./calculator";
-import {MockFoodRepository} from "../mocks/food";
-import {MockDiscount} from "../mocks/discount";
+import {describe} from 'node:test'
 
-describe("Test calculator functions", () => {
-    it("Without discount", () => {
+import {users} from '../mocks/datasource'
+import {MockDiscount} from '../mocks/discount'
+import {MockFoodRepository} from '../mocks/food'
+import {FoodCalculator} from './calculator'
+
+describe('Test calculator functions', () => {
+    it('Without discount', () => {
 
         // Given
         const user = users[0]
@@ -19,7 +20,7 @@ describe("Test calculator functions", () => {
         expect(price).toBe(200)
     })
 
-    it("With discount", () => {
+    it('With discount', () => {
 
         // Given
         const user = users[0]

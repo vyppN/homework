@@ -1,10 +1,11 @@
-import {describe} from "node:test";
-import {users} from '../mocks/datasource'
-import {CalculatorFactory} from "./factory";
-import {CalculatorFactorySpy} from "../mocks/factory";
+import {describe} from 'node:test'
 
-describe("Test factory", () => {
-    it("Should return a calculator", () => {
+import {users} from '../mocks/datasource'
+import {CalculatorFactorySpy} from '../mocks/factory'
+import {CalculatorFactory} from './factory'
+
+describe('Test factory', () => {
+    it('Should return a calculator', () => {
         // Given
         const user = users[0]
         const calculatorFactory = new CalculatorFactory()
@@ -18,7 +19,7 @@ describe("Test factory", () => {
 
     })
 
-    it("If user is member, set discount", () => {
+    it('If user is member, set discount', () => {
 
         // Given
         const user = users[1]
