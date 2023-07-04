@@ -7,6 +7,8 @@ TLDR; We can have N conditions for discounting without if statement on the imple
 With the interface, we can implement polymorphism to create various types of discount condition.
 We can eliminate if statement that decrease cyclomatic complexity in significant way
 and make it follow the L in SOLID - Liskov substitution
+
+And we love dependency injection, right?
  */
 
 export class MembershipDiscount implements Discountable {
