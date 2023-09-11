@@ -1,4 +1,4 @@
-# CODE HOMEWORK
+# Shop calculator
 
 **Prerequisite**
 - Node 16+
